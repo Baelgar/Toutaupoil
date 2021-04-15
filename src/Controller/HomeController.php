@@ -9,11 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home")
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/home", name="home")
      */
-    public function home()
+    public function index(): Response
     {
-        return $this->render('home/home.html.twig');
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
     }
 }
